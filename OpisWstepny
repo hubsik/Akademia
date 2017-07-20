@@ -1,3 +1,5 @@
 
-Aplikacja stworzona przy użyciu ASP.NET w której zamawiasz jedzenie, wybierasz miasto, typ jedzenia(lista firm  i lista potraw), składniki, wgląd w strony producentów. 
+Aplikacja stworzona przy użyciu WPf w której zamawiasz jedzenie, wybierasz miasto, typ jedzenia(lista firm  i lista potraw), składniki, wgląd w strony producentów. 
 Na koniec dostajesz nr zamówienia przewidywany czas realizacji i kwote do zapłaty.
+
+Zmiana zatwierdzona przez Michał Borowicz
