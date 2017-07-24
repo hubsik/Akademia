@@ -54,6 +54,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Burger.cs" />
+    <Compile Include="CityChooser.xaml.cs">
+      <DependentUpon>CityChooser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Kebab.cs" />
+    <Compile Include="Meal.cs" />
+    <Compile Include="OrderForm.cs" />
+    <Compile Include="Pizza.cs" />
+    <Compile Include="Restaurant.cs" />
+    <Compile Include="RestaurantChooser.xaml.cs">
+      <DependentUpon>RestaurantChooser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Sushi.cs" />
+    <Page Include="CityChooser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -66,6 +83,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="RestaurantChooser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

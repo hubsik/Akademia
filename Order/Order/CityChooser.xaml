@@ -1,0 +1,16 @@
+﻿<Page x:Name="PageCityChooser" x:Class="Order.CityChooser"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Order"
+      mc:Ignorable="d" 
+      d:DesignHeight="720" d:DesignWidth="1000"
+      Title="CityChooser">
+
+    <Grid>
+        <TextBox x:Name="TextBoxCity" Margin="150,350,150,285" TextWrapping="Wrap" Text="&lt;miasto&gt;" FontSize="36" TextAlignment="Center" GotFocus="TextBoxCity_GotFocus" KeyDown="TextBoxCity_KeyDown"/>
+        <Label x:Name="LabelCity" Content="Witaj! Chciałbyś coś zjeść ? Wpisz poniżej miasto w którym jesteś !" HorizontalAlignment="Left" Margin="150,270,0,0" VerticalAlignment="Top" Height="58" Width="700" FontSize="24"/>
+        
+    </Grid>
+</Page>
