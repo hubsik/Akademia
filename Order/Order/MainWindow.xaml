@@ -11,7 +11,8 @@
             <ColumnDefinition Width="1000" MinWidth="1000"/>
             <ColumnDefinition Width="280" MinWidth="280"/>
         </Grid.ColumnDefinitions>
-        
+
         <Frame x:Name="FrameForPages" HorizontalAlignment="Left" Height="690" VerticalAlignment="Top" Width="1000" NavigationUIVisibility="Hidden"/>
+        <Frame x:Name="FrameForPages2" Grid.Column="1" Margin="5,0,10,0.4"/>
     </Grid>
 </Window>

@@ -12,9 +12,9 @@ namespace Order
         public string Meat { get; set; }
         public string TypeOfRoll { get; set; }  
         public bool Cheese { get; set; }
-        public List<string> Vegetables;
+        public List<Product> Vegetables = new List<Product>();
 
-        Burger(string size, string sauce, string meat, string typeOfRoll, bool cheese, List<string> vegetables)
+        Burger(string size, string sauce, string meat, string typeOfRoll, bool cheese, List<Product> vegetables)
         {
             this.Size = size;
             this.Sauce = sauce;

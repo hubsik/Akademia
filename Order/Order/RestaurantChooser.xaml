@@ -5,10 +5,11 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Order"
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300"
+      d:DesignHeight="720" d:DesignWidth="1000"
       Title="RestaurantChooser">
 
     <Grid >
-        
+        <ListBox x:Name="ListBoxRestaurants" Height="710" Margin="200,0,150,0" VerticalAlignment="Top" FontSize="36" PreviewMouseDown="ListBoxRestaurants_PreviewMouseDown"/>
+
     </Grid>
 </Page>

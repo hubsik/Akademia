@@ -8,9 +8,9 @@ namespace Order
 {
     class Pizza : Meal
     {
-        public List<string> Toppings;
+        public List<Product> Toppings = new List<Product>();
         public string TypeOfPizzaDough { get; set; }
-        Pizza(string size, string typeOfPizzaDough, List<string> toppings)
+        Pizza(string size, string typeOfPizzaDough, List<Product> toppings)
         {
             this.Size = size;
             this.TypeOfPizzaDough = typeOfPizzaDough;

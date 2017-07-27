@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Order
 {
-    abstract class Meal
+    public abstract class Meal
     {
         public string Size { get; set; }
         public abstract double Cost();

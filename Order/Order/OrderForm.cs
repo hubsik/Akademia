@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Order
 {
-    class OrderForm
+    public class OrderForm
     {
-        public List<Meal> Meals;
+        public List<Meal> Meals = new List<Meal>();
         public DateTime TimeWhenOrdered { get; set; }
         public DateTime TimeWhenDelivered { get; set; }
         public double _totalCost { get; set; }
