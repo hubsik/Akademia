@@ -1,0 +1,19 @@
+﻿<Page x:Name="ComponentChooser1" x:Class="Order.ComponentChooser"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Order"
+      mc:Ignorable="d" 
+      d:DesignHeight="720" d:DesignWidth="280"
+      Title="ComponentChooser">
+
+    <Grid>
+        <ListBox x:Name="ListBoxSize" Margin="30,80,30,490" SelectionChanged="ListBoxSize_SelectionChanged"/>
+        <Button x:Name="ButtonPreviousPage" Content="Cofnij" Margin="30,10,30,0" VerticalAlignment="Top" Height="51" FontSize="36"/>
+        <Button x:Name="ButtonOrder" Content="Zamow" Margin="30,550,30,75" FontSize="36" IsEnabled="False"/>
+        <ListBox x:Name="ListBoxComponents" Margin="30,235,100,175" PreviewMouseDown="ListBoxComponents_PreviewMouseDown"  />
+        <ListBox x:Name="ListBoxComponentsCost" Margin="160,235,30,175" PreviewMouseDown="ListBoxComponents_PreviewMouseDown" />
+
+    </Grid>
+</Page>

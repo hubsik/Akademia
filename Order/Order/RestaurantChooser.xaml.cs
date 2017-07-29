@@ -21,15 +21,18 @@ namespace Order
     public partial class RestaurantChooser : Page
     {
         public List<Restaurant> ListOfRestaurantsForSelectedCity = new List<Restaurant>();
-        public RestaurantChooser(List<Restaurant> listOfRestaurantsForSelectedCity)
+        Frame FrameForPages2 = new Frame();
+        public Restaurant SelectedRestaurant { get; set; }
+        public RestaurantChooser(List<Restaurant> listOfRestaurantsForSelectedCity, Frame frameForPages2)
         {
             InitializeComponent();
             ListOfRestaurantsForSelectedCity = listOfRestaurantsForSelectedCity;
+            FrameForPages2 = frameForPages2;
             ListBoxRestaurants.Items.Clear();
 
             foreach (Restaurant restaurant in listOfRestaurantsForSelectedCity)
             {
-                ListBoxRestaurants.Items.Add(restaurant.Name);
+                ListBoxRestaurants.Items.Add((string)restaurant.Name);
             }
         }
 
@@ -38,7 +41,24 @@ namespace Order
             var item = ItemsControl.ContainerFromElement(ListBoxRestaurants, e.OriginalSource as DependencyObject) as ListBoxItem;
             if (item != null)
             {
-                MessageBox.Show("Elo");
+                try
+                {
+                    foreach (Restaurant restaurant in ListOfRestaurantsForSelectedCity)
+                    {
+                        if (restaurant.Name == item.Content.ToString())
+                        {
+                            SelectedRestaurant = restaurant;
+                        }
+
+                    }
+                    NavigationService.Navigate(new UserDataPage());
+                    FrameForPages2.NavigationService.Navigate(new ComponentChooser(SelectedRestaurant));
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Restaurant chooser " +ex.Message);
+                }
+                    
             }
         }
     }

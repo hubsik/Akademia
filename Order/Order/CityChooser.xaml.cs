@@ -62,8 +62,8 @@ namespace Order
                 }
                 else
                 {
-                    this.NavigationService.Navigate(new RestaurantChooser(ListOfRestaurantsForSelectedCity));
-                    FrameForPages2.NavigationService.Navigate(new IngredientsChooser(ListOfRestaurantsForSelectedCity, FrameForPages) );
+                    this.NavigationService.Navigate(new RestaurantChooser(ListOfRestaurantsForSelectedCity, FrameForPages2));
+                    FrameForPages2.NavigationService.Navigate(new IngredientsChooser(ListOfRestaurantsForSelectedCity, FrameForPages, FrameForPages2) );
                 }
             }
         }

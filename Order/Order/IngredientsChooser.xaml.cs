@@ -24,11 +24,13 @@ namespace Order
         public List<Restaurant> ListOfRestaurantsForSelectedCityAfterIngredients = new List<Restaurant>();
         public List<string> SelectedTypeOfIngredients = new List<string>();
         public Frame FrameForPages = new Frame();
-        public IngredientsChooser(List<Restaurant> listOfRestaurantsForSelectedCity, Frame frameForPages)
+        public Frame FrameForPages2 = new Frame();
+        public IngredientsChooser(List<Restaurant> listOfRestaurantsForSelectedCity, Frame frameForPages, Frame frameForPages2)
         {
             InitializeComponent();
             ListOfRestaurantsForSelectedCity = listOfRestaurantsForSelectedCity;
             FrameForPages = frameForPages;
+            FrameForPages2 = frameForPages2;
         }
 
         private void CheckBoxPizza_Checked(object sender, RoutedEventArgs e)
@@ -106,7 +108,7 @@ namespace Order
                     }
                 }
             }
-            FrameForPages.NavigationService.Navigate(new RestaurantChooser(ListOfRestaurantsForSelectedCityAfterIngredients));
+            FrameForPages.NavigationService.Navigate(new RestaurantChooser(ListOfRestaurantsForSelectedCityAfterIngredients, FrameForPages2));
         }
     }
 }
