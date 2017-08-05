@@ -70,6 +70,9 @@
     <Compile Include="RestaurantChooser.xaml.cs">
       <DependentUpon>RestaurantChooser.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SummaryPage.xaml.cs">
+      <DependentUpon>SummaryPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserDataPage.xaml.cs">
       <DependentUpon>UserDataPage.xaml</DependentUpon>
     </Compile>
@@ -98,6 +101,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="RestaurantChooser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SummaryPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

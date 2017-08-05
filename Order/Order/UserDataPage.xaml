@@ -21,17 +21,17 @@
             <ColumnDefinition Width="101*"/>
             <ColumnDefinition Width="149*"/>
         </Grid.ColumnDefinitions>
-        <Label x:Name="LabelUserDataPageInformation" Content="Podaj informacje do zamówienia" Margin="20,20,20,20" FontSize="24" Grid.ColumnSpan="2"/>
-        <Label x:Name="LabelUserDataPageName" Content="Imie:" Margin="20,20,20,20" FontSize="24" Grid.Row="1"/>
-        <Label x:Name="LabelUserDataPageSurname" Content="Nazwisko:" Margin="20,20,20,20" FontSize="24" Grid.Row="2"/>
-        <Label x:Name="LabelUserDataPageNumber" Content="Numer telefonu:" Margin="20,20,20,20" FontSize="24" Grid.Row="3"/>
-        <Label x:Name="LabelUserDataPageMail" Content="Mail:" Margin="20,20,20,20" FontSize="24" Grid.Row="4"/>
-        <TextBox x:Name="TextBoxDataUserPageName" Margin="20,20,20,20" TextWrapping="Wrap" Text="&lt;imie&gt;" FontSize="24" Grid.Column="1" Grid.Row="1" GotFocus="TextBoxDataUserPageName_GotFocus"/>
-        <TextBox x:Name="TextBoxDataUserPageSurname" Margin="20,20,20,20" TextWrapping="Wrap" Text="&lt;nazwisko&gt;" FontSize="24" Grid.Column="1" Grid.Row="2" GotFocus="TextBoxDataUserPageSurname_GotFocus"/>
-        <TextBox x:Name="TextBoxDataUserPageNumber" Margin="20,20,20,20" TextWrapping="Wrap" Text="&lt;number&gt;" FontSize="24" Grid.Row="3" Grid.Column="1" GotFocus="TextBoxDataUserPageNumber_GotFocus"/>
-        <TextBox x:Name="TextBoxDataUserPageMail" Margin="20,20,20,20" TextWrapping="Wrap" Text="&lt;@mail&gt;" FontSize="24" Grid.Row="4" Grid.Column="1" GotFocus="TextBoxDataUserPageMail_GotFocus"/>
-        <Label x:Name="LabelUserDataPageAdress" Content="Adres" Margin="20,20,20,20" FontSize="24" Grid.Row="5"/>
-        <TextBox x:Name="TextBoxDataUserPageAdress" Margin="20,20,20,20" TextWrapping="Wrap" Text="&lt;adres&gt;" FontSize="24" Grid.Row="5" Grid.Column="1" GotFocus="TextBoxDataUserPageAdress_GotFocus"/>
+        <Label x:Name="LabelUserDataPageInformation" Content="Podaj informacje do zamówienia" Margin="20,20,20,20" FontSize="24" Grid.ColumnSpan="2" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Label x:Name="LabelUserDataPageName" Content="Imie:" Margin="20,20,20,20" FontSize="24" Grid.Row="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Label x:Name="LabelUserDataPageSurname" Content="Nazwisko:" Margin="20,20,20,20" FontSize="24" Grid.Row="2" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Label x:Name="LabelUserDataPageNumber" Content="Numer telefonu:" Margin="20,20,20,20" FontSize="24" Grid.Row="3" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Label x:Name="LabelUserDataPageMail" Content="Mail:" Margin="20,20,20,20" FontSize="24" Grid.Row="4" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <TextBox x:Name="TextBoxDataUserPageName" Margin="20,20,20,20" TextWrapping="Wrap" FontSize="24" Grid.Column="1" Grid.Row="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
+        <TextBox x:Name="TextBoxDataUserPageSurname" Margin="20,20,20,20" TextWrapping="Wrap" FontSize="24" Grid.Column="1" Grid.Row="2" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
+        <TextBox x:Name="TextBoxDataUserPageNumber" Margin="20,20,20,20" TextWrapping="Wrap" FontSize="24" Grid.Row="3" Grid.Column="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
+        <TextBox x:Name="TextBoxDataUserPageMail" Margin="20,20,20,20" TextWrapping="Wrap" FontSize="24" Grid.Row="4" Grid.Column="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
+        <Label x:Name="LabelUserDataPageAdress" Content="Adres" Margin="20,20,20,20" FontSize="24" Grid.Row="5" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <TextBox x:Name="TextBoxDataUserPageAdress" Margin="20,20,20,20" TextWrapping="Wrap" FontSize="24" Grid.Row="5" Grid.Column="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
 
     </Grid>
 </Page>

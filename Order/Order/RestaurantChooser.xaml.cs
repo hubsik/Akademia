@@ -51,8 +51,9 @@ namespace Order
                         }
 
                     }
-                    NavigationService.Navigate(new UserDataPage());
-                    FrameForPages2.NavigationService.Navigate(new ComponentChooser(SelectedRestaurant));
+                    UserDataPage userDataPage = new UserDataPage(SelectedRestaurant);
+                    NavigationService.Navigate(userDataPage);
+                    FrameForPages2.NavigationService.Navigate(new ComponentChooser(SelectedRestaurant, userDataPage));
                 }
                 catch (Exception ex)
                 {

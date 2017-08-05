@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Globalization;
 
 namespace Order
 {
@@ -23,45 +24,30 @@ namespace Order
         public Restaurant SelectedRestaurant { get; set; }
         public OrderForm orderForm { get; set; }
         public double Cost { get; set; }
+        UserDataPage UserDataPage; 
 
 
         //////////////////
-        public string Sauce { get; set; }
-        public string Meat { get; set; }
-        public bool Vegetables { get; set; }
-        public string Size { get; set; }
-        public bool Cheese { get; set; }
-        public string TypeOfSushi { get; set; }
-        public List<Product> ListVegetables = new List<Product>();
-        public List<Product> Toppings = new List<Product>();
 
-        public ComponentChooser(Restaurant selectedRestaurant)
+        List<Product> Meat = new List<Product>();
+        List<Product> Vegetables = new List<Product>();
+        List<Product> Other = new List<Product>();
+        public string Type { get; set; }
+        public string Size { get; set; }
+        Meal NewMeal;
+
+        public ComponentChooser(Restaurant selectedRestaurant, UserDataPage userDataPage)
         {
             InitializeComponent();
 
-            //SelectedRestaurant = selectedRestaurant;
-            //switch (SelectedRestaurant.Type)
-            //{
-            //    case "Kebab":
-            //        Meal NewMeal = new Kebab(Size, Sauce, Meat, Vegetables);
-            //        break;
-            //    case "Burger":
-            //        Meal Burger = new Burger(Size, Sauce, Meat, Cheese, ListVegetables);
-            //        break;
-            //    case "Sushi":
-            //        Meal Sushi = new Sushi(Size, TypeOfSushi);
-            //        break;
-            //    case "Pizza":
-            //        Meal Pizza = new Pizza(Size, Toppings);
-            //        break;
-            //    default:
-            //        break;
-            //}
+            SelectedRestaurant = selectedRestaurant;
+            NewMeal = new Meal(Meat, Vegetables, Other, SelectedRestaurant.Type, Size);
+            UserDataPage = userDataPage;
             ListOut();
 
-            ListBoxSize.Items.Add("XL - 13");
-            ListBoxSize.Items.Add("L - 10");
-            ListBoxSize.Items.Add("S - 8");
+            ListBoxSize.Items.Add("XL");
+            ListBoxSize.Items.Add("L");
+            ListBoxSize.Items.Add("S");
 
         }
 
@@ -84,8 +70,21 @@ namespace Order
             {
                 if (product.Name == name)
                 {
-                    Cost += product.Cost;
-                    ButtonOrder.Content = "Zamow(" + Cost.ToString() + " zl)";
+                    switch (product.Type)
+                    {
+                        case "mieso":
+                            NewMeal.Meat.Add(product);
+                            break;
+                        case "warzywo":
+                            NewMeal.Vegetables.Add(product);
+                            break;
+                        case "inne":
+                            NewMeal.Other.Add(product);
+                            break;
+                        default:
+                            break;
+                    }
+                    ButtonOrder.Content = "Zamow(" + NewMeal.Cost().ToString() + " zl)";
 
                     ProductToDelete = product;
                 }
@@ -104,8 +103,68 @@ namespace Order
 
         private void ListBoxSize_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            MessageBox.Show(ListBoxSize.SelectedItem.ToString());
+            NewMeal.Size = ListBoxSize.SelectedItem.ToString();
+            Cost += NewMeal.PartialCost(NewMeal.Size);
+            ListBoxSize.IsEnabled = false;
+            ButtonOrder.Content = "Zamow(" + NewMeal.Cost().ToString() + " zl)";
         }
 
+        public bool ButtonOrderAvailable()
+        {
+            if (UserDataPage.TextBoxesAreNotEmpty() && ListBoxSize.IsEnabled == false)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        private void ButtonOrder_Click(object sender, RoutedEventArgs e)
+        {
+            if (ButtonOrderAvailable())
+            {
+                string FullName = UserDataPage.TextBoxDataUserPageName.Text + " " + UserDataPage.TextBoxDataUserPageSurname.Text;
+                string TelephoneNumber = UserDataPage.TextBoxDataUserPageNumber.Text;
+                string Mail = UserDataPage.TextBoxDataUserPageMail.Text;
+                string Address = UserDataPage.TextBoxDataUserPageAdress.Text;
+                List<Meal> Meals = new List<Meal>();
+                Meals.Add(NewMeal);
+                DateTime TimeWhenOrdered = DateTime.Now;
+                DateTime TimeWhenDelivered = DateTime.Now;
+                
+                if (Meals.Count > 3)
+                {
+                    MessageBox.Show(TimeWhenDelivered.AddHours(2).ToLongTimeString());
+                    TimeWhenDelivered = TimeWhenDelivered.AddHours(2);
+                }
+                else
+                {
+                    TimeWhenDelivered = TimeWhenDelivered.AddHours(1);
+                }
+
+                NavigationService.Navigate(null);
+                UserDataPage.NavigationService.Navigate(new SummaryPage(new OrderForm(FullName, TelephoneNumber, Mail, Address, Meals, TimeWhenOrdered, TimeWhenDelivered, SelectedRestaurant)));
+
+            }
+            else
+            {
+                MessageBox.Show("Nie wszystkie pola zostaly wypelnione");
+            }
+        }
+
+        private void ButtonPreviousPage_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.NavigationService.CanGoBack)
+            {
+                this.NavigationService.GoBack();
+            }
+
+            if (UserDataPage.NavigationService.CanGoBack)
+            {
+                UserDataPage.NavigationService.GoBack();
+            }
+        }
     }
 }

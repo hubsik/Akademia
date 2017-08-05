@@ -1,0 +1,42 @@
+﻿<Page x:Name="SummaryPage1" x:Class="Order.SummaryPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Order"
+      mc:Ignorable="d" 
+      d:DesignHeight="720" d:DesignWidth="1000"
+      Title="SummaryPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="278*"/>
+        </Grid.RowDefinitions>
+        <Label x:Name="LabelSummary" Content="Podsumowanie" Margin="10,0,10,0.2" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Center"/>
+        <Label x:Name="LabelOrderNumber" Content="" Margin="10,35,10,0.4" Grid.RowSpan="2" FontSize="16"/>
+        <Label x:Name="LabelFullName" Content="" Margin="10,34.8,10,0.6" Grid.RowSpan="2" Grid.Row="1" FontSize="16"/>
+        <Label x:Name="LabelTelephoneNumber" Content="" Margin="10,0.4,10,35" Grid.RowSpan="2" Grid.Row="3" FontSize="16"/>
+        <Label x:Name="LabelMail" Content="" Margin="10,0.2,10,0" Grid.Row="4" FontSize="16"/>
+        <Label x:Name="LabelAddress" Content="" Margin="10,0,10,0.2" Grid.Row="5" FontSize="16"/>
+        <Label x:Name="LabelLink" Content="" Margin="10,35,10,0.4" Grid.Row="5" Grid.RowSpan="2" FontSize="16"/>
+        <Label x:Name="LabelType" Content="" Margin="10,34.8,10,0.6" Grid.Row="6" Grid.RowSpan="2" FontSize="16"/>
+        <Label x:Name="LabelComponents" Content="" Margin="10,0.4,871,35" Grid.Row="8" Grid.RowSpan="2" FontSize="16"/>
+        <Label x:Name="LabelTimeWhenOrdered" Content="" Margin="10,0.2,10,0" Grid.Row="9" FontSize="16"/>
+        <Label x:Name="LabelTimeWhenDelivered" Content="" Margin="10,0,10,0.2" Grid.Row="10" FontSize="16"/>
+        <TextBox x:Name="TextBoxNote" Margin="60,40,500,80" Grid.Row="11" TextWrapping="Wrap" Text="&lt;Uwagi do zamowienia&gt;" FontSize="16"/>
+        <Button x:Name="ButtonEnd" Content="Zakoncz" Margin="700,140,90,80" Grid.Row="11" Click="ButtonEnd_Click"/>
+        <Label x:Name="LabelComponents2" Content="" Margin="129,0.4,10,35" Grid.Row="8" Grid.RowSpan="2" FontSize="16"/>
+
+    </Grid>
+</Page>

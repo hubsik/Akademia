@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Order"
         mc:Ignorable="d"
-        Title="Order" Width="1280" Height="720" MinWidth="1280" MinHeight="720" VerticalAlignment="Top" FontSize="24" ResizeMode="NoResize" WindowStartupLocation="CenterScreen"  >
+        Title="Order" Width="1280" Height="720" MinWidth="1280" MinHeight="720" VerticalAlignment="Top" FontSize="24" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Background="#FF747474"  >
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1000" MinWidth="1000"/>

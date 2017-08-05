@@ -20,34 +20,33 @@ namespace Order
     /// </summary>
     public partial class UserDataPage : Page
     {
-        public UserDataPage()
+        public Restaurant SelectedRestaurant { get; set; }
+        public UserDataPage(Restaurant selectedRestaurant)
         {
             InitializeComponent();
+            SelectedRestaurant = selectedRestaurant;
+
+            if (SelectedRestaurant.Delivery == false)
+            {
+                TextBoxDataUserPageAdress.Text = "Brak mozliwosci dowozu";
+                TextBoxDataUserPageAdress.IsEnabled = false;
+            }
+
+            
         }
 
-        private void TextBoxDataUserPageName_GotFocus(object sender, RoutedEventArgs e)
-        {
-            TextBoxDataUserPageName.Text = string.Empty;
-        }
+       
 
-        private void TextBoxDataUserPageSurname_GotFocus(object sender, RoutedEventArgs e)
+        public bool TextBoxesAreNotEmpty()
         {
-            TextBoxDataUserPageSurname.Text = string.Empty;
-        }
-
-        private void TextBoxDataUserPageNumber_GotFocus(object sender, RoutedEventArgs e)
-        {
-            TextBoxDataUserPageNumber.Text = string.Empty;
-        }
-
-        private void TextBoxDataUserPageMail_GotFocus(object sender, RoutedEventArgs e)
-        {
-            TextBoxDataUserPageMail.Text = string.Empty;
-        }
-
-        private void TextBoxDataUserPageAdress_GotFocus(object sender, RoutedEventArgs e)
-        {
-            TextBoxDataUserPageAdress.Text = string.Empty;
+            if (TextBoxDataUserPageName.Text != string.Empty && TextBoxDataUserPageSurname.Text != string.Empty && TextBoxDataUserPageNumber.Text != string.Empty && TextBoxDataUserPageMail.Text != string.Empty && TextBoxDataUserPageAdress.Text != string.Empty)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

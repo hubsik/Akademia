@@ -27,7 +27,6 @@ namespace Order
         public string name { get; set; }
         public string type { get; set; }
         public bool delivery { get; set; }
-        public List<Product> products = new List<Product>();
         Frame FrameForPages2 = new Frame();
         Frame FrameForPages = new Frame();
         public CityChooser(Frame frameForPages, Frame frameForPages2)
@@ -76,18 +75,20 @@ namespace Order
 
                     while (!sr.EndOfStream)
                     {
+                        List<Product> products = new List<Product>();
                         city = sr.ReadLine();
                         name = sr.ReadLine();
                         type = sr.ReadLine();
                         delivery = Convert.ToBoolean(sr.ReadLine());
                         sr.ReadLine();
-                        string Line;
+                        string Line ;
                         while ((Line = sr.ReadLine()) != "//////////")
                         {
                             string[] Words = Line.Split(' ');
                             products.Add(new Product(Words[0], Words[1], Convert.ToDouble(Words[2])));
                         }
                         ListOfRestaurants.Add(new Restaurant(city, name, type, delivery, products));
+                        
                     }
                 }
             }
