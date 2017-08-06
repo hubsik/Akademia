@@ -9,7 +9,7 @@
       Title="RestaurantChooser">
 
     <Grid >
-        <ListBox x:Name="ListBoxRestaurants" Height="710" Margin="200,0,150,0" VerticalAlignment="Top" FontSize="36" PreviewMouseDown="ListBoxRestaurants_PreviewMouseDown"/>
+        <ListBox x:Name="ListBoxRestaurants" Height="710" Margin="200,0,250,0" VerticalAlignment="Top" FontSize="36" PreviewMouseDown="ListBoxRestaurants_PreviewMouseDown" Background="#FF2728B0" Foreground="White"/>
 
     </Grid>
 </Page>

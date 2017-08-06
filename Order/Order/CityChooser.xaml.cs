@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -27,6 +27,7 @@ namespace Order
         public string name { get; set; }
         public string type { get; set; }
         public bool delivery { get; set; }
+        public string link { get; set; }
         Frame FrameForPages2 = new Frame();
         Frame FrameForPages = new Frame();
         public CityChooser(Frame frameForPages, Frame frameForPages2)
@@ -61,7 +62,7 @@ namespace Order
                 }
                 else
                 {
-                    this.NavigationService.Navigate(new RestaurantChooser(ListOfRestaurantsForSelectedCity, FrameForPages2));
+                    this.NavigationService.Navigate(new RestaurantChooser(ListOfRestaurantsForSelectedCity,FrameForPages, FrameForPages2));
                     FrameForPages2.NavigationService.Navigate(new IngredientsChooser(ListOfRestaurantsForSelectedCity, FrameForPages, FrameForPages2) );
                 }
             }
@@ -80,6 +81,7 @@ namespace Order
                         name = sr.ReadLine();
                         type = sr.ReadLine();
                         delivery = Convert.ToBoolean(sr.ReadLine());
+                        link = sr.ReadLine(); ;
                         sr.ReadLine();
                         string Line ;
                         while ((Line = sr.ReadLine()) != "//////////")
@@ -87,7 +89,7 @@ namespace Order
                             string[] Words = Line.Split(' ');
                             products.Add(new Product(Words[0], Words[1], Convert.ToDouble(Words[2])));
                         }
-                        ListOfRestaurants.Add(new Restaurant(city, name, type, delivery, products));
+                        ListOfRestaurants.Add(new Restaurant(city, name, type, delivery, link, products));
                         
                     }
                 }

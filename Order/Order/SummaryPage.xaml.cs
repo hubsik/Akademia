@@ -22,28 +22,30 @@ namespace Order
     public partial class SummaryPage : Page
     {
         public OrderForm OrderForm { get; set; }
-        public SummaryPage(OrderForm orderForm)
+        public Frame FrameForPages = new Frame();
+        public Frame FrameForPages2 = new Frame();
+        public SummaryPage(OrderForm orderForm, Frame frameForPages, Frame frameForPages2)
         {
             InitializeComponent();
             OrderForm = orderForm;
+            FrameForPages = frameForPages;
+            FrameForPages2 = frameForPages2;
 
             LabelOrderNumber.Content = "Numer Zamowienia: " + OrderForm.OrderNumber;
             LabelFullName.Content = "Zamawiajacy: " + OrderForm.FullName;
-            LabelTelephoneNumber.Content = "Numer Telefonu " + OrderForm.TelephoneNumber;
+            LabelTelephoneNumber.Content = "Numer Telefonu: " + OrderForm.TelephoneNumber;
             LabelMail.Content = "Mail: " + OrderForm.Mail;
             LabelAddress.Content = "Adres: " + OrderForm.Address;
-            LabelLink.Content = "brak";
-            LabelType.Content = "Jedzenie: " + OrderForm.Meals[0].Type;
-            LabelComponents.Content = "Skladniki: ";
-            foreach (Product product in OrderForm.Meals[0].Meat)
+            LabelType.Content = "Jedzenie: " + OrderForm.Meals[OrderForm.Meals.Count - 1].Type;
+            foreach (Product product in OrderForm.Meals[OrderForm.Meals.Count -1].Meat)
             {
                 LabelComponents2.Content = LabelComponents2.Content  + product.Name + ", ";
             }
-            foreach (Product product in OrderForm.Meals[0].Vegetables)
+            foreach (Product product in OrderForm.Meals[OrderForm.Meals.Count - 1].Vegetables)
             {
                 LabelComponents2.Content = LabelComponents2.Content  + product.Name + ", ";
             }
-            foreach (Product product in OrderForm.Meals[0].Other)
+            foreach (Product product in OrderForm.Meals[OrderForm.Meals.Count - 1].Other)
             {
                 LabelComponents2.Content = LabelComponents2.Content  + product.Name + " ";
             }
@@ -61,15 +63,29 @@ namespace Order
                 writer.WriteLine("Mail: " + OrderForm.Mail);
                 writer.WriteLine("Adres: " + OrderForm.Address);
                 writer.WriteLine("brak");
-                writer.WriteLine("Jedzenie: " + OrderForm.Meals[0].Type);
+                writer.WriteLine("Jedzenie: " + OrderForm.Meals[OrderForm.Meals.Count - 1].Type);
                 writer.WriteLine("Skladniki: "+ LabelComponents2.Content);
                 writer.WriteLine("Zamowiono: " + OrderForm.TimeWhenOrdered);
                 writer.WriteLine("Planowany czas dostawy: " + OrderForm.TimeWhenDelivered);
                 writer.WriteLine("Uwagi: ");
                 writer.WriteLine(TextBoxNote.Text);
 
-     
+                this.NavigationService.Navigate(new CityChooser(FrameForPages, FrameForPages2));
             }
+        }
+
+        private void OnClick(object sender, RoutedEventArgs e)
+        {
+
+                try
+                {
+                    System.Diagnostics.Process.Start(OrderForm.SelectedRestaurant.Link);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            
         }
     }
 }

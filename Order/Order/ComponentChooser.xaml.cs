@@ -24,6 +24,8 @@ namespace Order
         public Restaurant SelectedRestaurant { get; set; }
         public OrderForm orderForm { get; set; }
         public double Cost { get; set; }
+        public Frame FrameForPages = new Frame();
+        public Frame FrameForPages2 = new Frame();
         UserDataPage UserDataPage; 
 
 
@@ -36,11 +38,13 @@ namespace Order
         public string Size { get; set; }
         Meal NewMeal;
 
-        public ComponentChooser(Restaurant selectedRestaurant, UserDataPage userDataPage)
+        public ComponentChooser(Restaurant selectedRestaurant, UserDataPage userDataPage, Frame frameForPages, Frame frameForPages2)
         {
             InitializeComponent();
 
             SelectedRestaurant = selectedRestaurant;
+            FrameForPages = frameForPages;
+            FrameForPages2 = frameForPages2;
             NewMeal = new Meal(Meat, Vegetables, Other, SelectedRestaurant.Type, Size);
             UserDataPage = userDataPage;
             ListOut();
@@ -136,7 +140,6 @@ namespace Order
                 
                 if (Meals.Count > 3)
                 {
-                    MessageBox.Show(TimeWhenDelivered.AddHours(2).ToLongTimeString());
                     TimeWhenDelivered = TimeWhenDelivered.AddHours(2);
                 }
                 else
@@ -145,8 +148,9 @@ namespace Order
                 }
 
                 NavigationService.Navigate(null);
-                UserDataPage.NavigationService.Navigate(new SummaryPage(new OrderForm(FullName, TelephoneNumber, Mail, Address, Meals, TimeWhenOrdered, TimeWhenDelivered, SelectedRestaurant)));
-
+                
+                UserDataPage.NavigationService.Navigate(new SummaryPage(new OrderForm(FullName, TelephoneNumber, Mail, Address, Meals, TimeWhenOrdered, TimeWhenDelivered, SelectedRestaurant), FrameForPages, FrameForPages2));
+                
             }
             else
             {

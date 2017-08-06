@@ -21,17 +21,17 @@
             <ColumnDefinition Width="101*"/>
             <ColumnDefinition Width="149*"/>
         </Grid.ColumnDefinitions>
-        <Label x:Name="LabelUserDataPageInformation" Content="Podaj informacje do zamówienia" Margin="20,20,20,20" FontSize="24" Grid.ColumnSpan="2" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-        <Label x:Name="LabelUserDataPageName" Content="Imie:" Margin="20,20,20,20" FontSize="24" Grid.Row="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-        <Label x:Name="LabelUserDataPageSurname" Content="Nazwisko:" Margin="20,20,20,20" FontSize="24" Grid.Row="2" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-        <Label x:Name="LabelUserDataPageNumber" Content="Numer telefonu:" Margin="20,20,20,20" FontSize="24" Grid.Row="3" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-        <Label x:Name="LabelUserDataPageMail" Content="Mail:" Margin="20,20,20,20" FontSize="24" Grid.Row="4" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-        <TextBox x:Name="TextBoxDataUserPageName" Margin="20,20,20,20" TextWrapping="Wrap" FontSize="24" Grid.Column="1" Grid.Row="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
-        <TextBox x:Name="TextBoxDataUserPageSurname" Margin="20,20,20,20" TextWrapping="Wrap" FontSize="24" Grid.Column="1" Grid.Row="2" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
-        <TextBox x:Name="TextBoxDataUserPageNumber" Margin="20,20,20,20" TextWrapping="Wrap" FontSize="24" Grid.Row="3" Grid.Column="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
-        <TextBox x:Name="TextBoxDataUserPageMail" Margin="20,20,20,20" TextWrapping="Wrap" FontSize="24" Grid.Row="4" Grid.Column="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
-        <Label x:Name="LabelUserDataPageAdress" Content="Adres" Margin="20,20,20,20" FontSize="24" Grid.Row="5" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-        <TextBox x:Name="TextBoxDataUserPageAdress" Margin="20,20,20,20" TextWrapping="Wrap" FontSize="24" Grid.Row="5" Grid.Column="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
+        <Label x:Name="LabelUserDataPageInformation" Content="Podaj informacje do zamówienia" Margin="20,20,20,20" FontSize="24" Grid.ColumnSpan="2" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="White"/>
+        <Label x:Name="LabelUserDataPageName" Content="Imie:" Margin="20,20,20,20" FontSize="24" Grid.Row="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="White"/>
+        <Label x:Name="LabelUserDataPageSurname" Content="Nazwisko:" Margin="20,20,20,20" FontSize="24" Grid.Row="2" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="White"/>
+        <Label x:Name="LabelUserDataPageNumber" Content="Numer telefonu:" Margin="20,20,20,20" FontSize="24" Grid.Row="3" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="White"/>
+        <Label x:Name="LabelUserDataPageMail" Content="Mail:" Margin="20,20,20,20" FontSize="24" Grid.Row="4" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="White"/>
+        <TextBox x:Name="TextBoxDataUserPageName" Margin="20,20,20,20" TextWrapping="Wrap" FontSize="24" Grid.Column="1" Grid.Row="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="White" Background="#FF2728B0" />
+        <TextBox x:Name="TextBoxDataUserPageSurname" Margin="20,20,20,20" TextWrapping="Wrap" FontSize="24" Grid.Column="1" Grid.Row="2" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="White" Background="#FF2728B0" />
+        <TextBox x:Name="TextBoxDataUserPageNumber" Margin="20,20,20,20" TextWrapping="Wrap" FontSize="24" Grid.Row="3" Grid.Column="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="White" Background="#FF2728B0" />
+        <TextBox x:Name="TextBoxDataUserPageMail" Margin="20,20,20,20" TextWrapping="Wrap" FontSize="24" Grid.Row="4" Grid.Column="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="White" Background="#FF2728B0" />
+        <Label x:Name="LabelUserDataPageAdress" Content="Adres" Margin="20,20,20,20" FontSize="24" Grid.Row="5" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="White"/>
+        <TextBox x:Name="TextBoxDataUserPageAdress" Margin="20,20,20,20" TextWrapping="Wrap" FontSize="24" Grid.Row="5" Grid.Column="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="White" Background="#FF2728B0" />
 
     </Grid>
 </Page>

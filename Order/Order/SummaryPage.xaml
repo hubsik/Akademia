@@ -23,20 +23,26 @@
             <RowDefinition Height="35"/>
             <RowDefinition Height="278*"/>
         </Grid.RowDefinitions>
-        <Label x:Name="LabelSummary" Content="Podsumowanie" Margin="10,0,10,0.2" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Center"/>
-        <Label x:Name="LabelOrderNumber" Content="" Margin="10,35,10,0.4" Grid.RowSpan="2" FontSize="16"/>
-        <Label x:Name="LabelFullName" Content="" Margin="10,34.8,10,0.6" Grid.RowSpan="2" Grid.Row="1" FontSize="16"/>
-        <Label x:Name="LabelTelephoneNumber" Content="" Margin="10,0.4,10,35" Grid.RowSpan="2" Grid.Row="3" FontSize="16"/>
-        <Label x:Name="LabelMail" Content="" Margin="10,0.2,10,0" Grid.Row="4" FontSize="16"/>
-        <Label x:Name="LabelAddress" Content="" Margin="10,0,10,0.2" Grid.Row="5" FontSize="16"/>
-        <Label x:Name="LabelLink" Content="" Margin="10,35,10,0.4" Grid.Row="5" Grid.RowSpan="2" FontSize="16"/>
-        <Label x:Name="LabelType" Content="" Margin="10,34.8,10,0.6" Grid.Row="6" Grid.RowSpan="2" FontSize="16"/>
-        <Label x:Name="LabelComponents" Content="" Margin="10,0.4,871,35" Grid.Row="8" Grid.RowSpan="2" FontSize="16"/>
-        <Label x:Name="LabelTimeWhenOrdered" Content="" Margin="10,0.2,10,0" Grid.Row="9" FontSize="16"/>
-        <Label x:Name="LabelTimeWhenDelivered" Content="" Margin="10,0,10,0.2" Grid.Row="10" FontSize="16"/>
-        <TextBox x:Name="TextBoxNote" Margin="60,40,500,80" Grid.Row="11" TextWrapping="Wrap" Text="&lt;Uwagi do zamowienia&gt;" FontSize="16"/>
-        <Button x:Name="ButtonEnd" Content="Zakoncz" Margin="700,140,90,80" Grid.Row="11" Click="ButtonEnd_Click"/>
-        <Label x:Name="LabelComponents2" Content="" Margin="129,0.4,10,35" Grid.Row="8" Grid.RowSpan="2" FontSize="16"/>
+        <Label x:Name="LabelSummary" Content="Podsumowanie" Margin="10,0,10,0.2" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Center" Foreground="White"/>
+        <Label x:Name="LabelOrderNumber" Content="" Margin="10,35,10,0.4" Grid.RowSpan="2" FontSize="16" Foreground="White"/>
+        <Label x:Name="LabelFullName" Content="" Margin="10,34.8,10,0.6" Grid.RowSpan="2" Grid.Row="1" FontSize="16" Foreground="White"/>
+        <Label x:Name="LabelTelephoneNumber" Content="" Margin="10,0.4,10,35" Grid.RowSpan="2" Grid.Row="3" FontSize="16" Foreground="White"/>
+        <Label x:Name="LabelMail" Content="" Margin="10,0.2,10,0" Grid.Row="4" FontSize="16" Foreground="White"/>
+        <Label x:Name="LabelAddress" Content="" Margin="10,0,10,0.2" Grid.Row="5" FontSize="16" Foreground="White"/>
+        <Label x:Name="LabelLink"  Margin="10,35,10,0.4" Grid.Row="5" Grid.RowSpan="2" FontSize="16" Foreground="White">
+            <TextBlock TextWrapping="Wrap" Foreground="White">
+              <Hyperlink Click="OnClick" Foreground="White">
+                <Run Text="Strona restauracji"/>
+              </Hyperlink>
+            </TextBlock>
+        </Label>
+        <Label x:Name="LabelType" Content="" Margin="10,34.8,10,0.6" Grid.Row="6" Grid.RowSpan="2" FontSize="16" Foreground="White"/>
+        <Label x:Name="LabelComponents" Content="Skladniki: " Margin="10,0.4,909,35" Grid.Row="8" Grid.RowSpan="2" FontSize="16" Foreground="White"/>
+        <Label x:Name="LabelTimeWhenOrdered" Content="" Margin="10,0.2,10,0" Grid.Row="9" FontSize="16" Foreground="White"/>
+        <Label x:Name="LabelTimeWhenDelivered" Content="" Margin="10,0,10,0.2" Grid.Row="10" FontSize="16" Foreground="White"/>
+        <TextBox x:Name="TextBoxNote" Margin="60,40,500,80" Grid.Row="11" TextWrapping="Wrap" Text="&lt;Uwagi do zamowienia&gt;" FontSize="16" Background="#FF2728B0" Foreground="White"/>
+        <Button x:Name="ButtonEnd" Content="Zakoncz" Margin="700,140,90,80" Grid.Row="11" Click="ButtonEnd_Click" Foreground="White" FontSize="36" Background="#FF24D400"/>
+        <Label x:Name="LabelComponents2" Content="" Margin="96,0.4,10,35" Grid.Row="8" Grid.RowSpan="2" FontSize="16" Foreground="White"/>
 
     </Grid>
 </Page>

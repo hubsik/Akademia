@@ -21,13 +21,15 @@ namespace Order
     public partial class RestaurantChooser : Page
     {
         public List<Restaurant> ListOfRestaurantsForSelectedCity = new List<Restaurant>();
-        Frame FrameForPages2 = new Frame();
+        public Frame FrameForPages = new Frame();
+        public Frame FrameForPages2 = new Frame();
         public Restaurant SelectedRestaurant { get; set; }
-        public RestaurantChooser(List<Restaurant> listOfRestaurantsForSelectedCity, Frame frameForPages2)
+        public RestaurantChooser(List<Restaurant> listOfRestaurantsForSelectedCity, Frame frameForPages, Frame frameForPages2)
         {
             InitializeComponent();
-            ListOfRestaurantsForSelectedCity = listOfRestaurantsForSelectedCity;
+            FrameForPages = frameForPages;
             FrameForPages2 = frameForPages2;
+            ListOfRestaurantsForSelectedCity = listOfRestaurantsForSelectedCity;
             ListBoxRestaurants.Items.Clear();
 
             foreach (Restaurant restaurant in listOfRestaurantsForSelectedCity)
@@ -53,7 +55,7 @@ namespace Order
                     }
                     UserDataPage userDataPage = new UserDataPage(SelectedRestaurant);
                     NavigationService.Navigate(userDataPage);
-                    FrameForPages2.NavigationService.Navigate(new ComponentChooser(SelectedRestaurant, userDataPage));
+                    FrameForPages2.NavigationService.Navigate(new ComponentChooser(SelectedRestaurant, userDataPage, FrameForPages, FrameForPages2));
                 }
                 catch (Exception ex)
                 {

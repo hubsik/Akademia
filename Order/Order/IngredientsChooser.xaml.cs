@@ -108,7 +108,7 @@ namespace Order
                     }
                 }
             }
-            FrameForPages.NavigationService.Navigate(new RestaurantChooser(ListOfRestaurantsForSelectedCityAfterIngredients, FrameForPages2));
+            FrameForPages.NavigationService.Navigate(new RestaurantChooser(ListOfRestaurantsForSelectedCityAfterIngredients, FrameForPages, FrameForPages2));
         }
     }
 }

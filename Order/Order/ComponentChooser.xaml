@@ -9,11 +9,11 @@
       Title="ComponentChooser">
 
     <Grid>
-        <ListBox x:Name="ListBoxSize" Margin="30,80,30,490" SelectionChanged="ListBoxSize_SelectionChanged"/>
-        <Button x:Name="ButtonPreviousPage" Content="Cofnij" Margin="30,10,30,0" VerticalAlignment="Top" Height="51" FontSize="36" Click="ButtonPreviousPage_Click"/>
-        <Button x:Name="ButtonOrder" Content="Zamow" Margin="30,550,30,75" FontSize="24" Click="ButtonOrder_Click" />
-        <ListBox x:Name="ListBoxComponents" Margin="30,235,100,175" PreviewMouseDown="ListBoxComponents_PreviewMouseDown"  />
-        <ListBox x:Name="ListBoxComponentsCost" Margin="160,235,30,175" PreviewMouseDown="ListBoxComponents_PreviewMouseDown" />
+        <ListBox x:Name="ListBoxSize" Margin="30,80,30,490" SelectionChanged="ListBoxSize_SelectionChanged" Foreground="White" Background="#FF2728B0"/>
+        <Button x:Name="ButtonPreviousPage" Content="Cofnij" Margin="30,10,30,0" VerticalAlignment="Top" Height="51" FontSize="36" Click="ButtonPreviousPage_Click" Foreground="White" Background="Red"/>
+        <Button x:Name="ButtonOrder" Content="Zamow" Margin="30,550,30,75" FontSize="24" Click="ButtonOrder_Click" Foreground="White" Background="#FF24D400" />
+        <ListBox x:Name="ListBoxComponents" Margin="30,235,100,175" PreviewMouseDown="ListBoxComponents_PreviewMouseDown" Foreground="White" Background="#FF2728B0"  />
+        <ListBox x:Name="ListBoxComponentsCost" Margin="160,235,30,175" PreviewMouseDown="ListBoxComponents_PreviewMouseDown" Foreground="White" Background="#FF2728B0" />
 
     </Grid>
 </Page>

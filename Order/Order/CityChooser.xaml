@@ -9,8 +9,12 @@
       Title="CityChooser">
 
     <Grid>
-        <TextBox x:Name="TextBoxCity" Margin="150,350,150,285" TextWrapping="Wrap" Text="&lt;miasto&gt;" FontSize="36" TextAlignment="Center" GotFocus="TextBoxCity_GotFocus" KeyDown="TextBoxCity_KeyDown" VerticalContentAlignment="Center" Background="White"/>
-        <Label x:Name="LabelCity" Content="Witaj! Chciałbyś coś zjeść ? Wpisz poniżej miasto w którym jesteś !" HorizontalAlignment="Left" Margin="150,270,0,0" VerticalAlignment="Top" Height="58" Width="700" FontSize="24"/>
-        
+        <TextBox x:Name="TextBoxCity" Margin="150,350,150,285" TextWrapping="Wrap" Text="&lt;miasto&gt;" FontSize="36" TextAlignment="Center" GotFocus="TextBoxCity_GotFocus" KeyDown="TextBoxCity_KeyDown" VerticalContentAlignment="Center" Foreground="White">
+            <TextBox.Background>
+                <SolidColorBrush Color="#FF2728B0"/>
+            </TextBox.Background>
+        </TextBox>
+        <Label x:Name="LabelCity" Content="Witaj! Chciałbyś coś zjeść ? Wpisz poniżej miasto w którym jesteś !" HorizontalAlignment="Left" Margin="150,270,0,0" VerticalAlignment="Top" Height="58" Width="700" FontSize="24" Foreground="White"/>
+
     </Grid>
 </Page>
