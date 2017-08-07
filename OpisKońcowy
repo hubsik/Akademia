@@ -1,3 +1,5 @@
+Link do Filmu: https://www.youtube.com/watch?v=1EtV9ED24pY&t=2s
+
 - MainWindow.xaml.cs
 Podział wyświetlanego okna na 2 ramki, w każdej wyświetlane niezależne strony. W lewej ramce wywołanie klasy 'CityChooser'.
 
@@ -28,4 +30,22 @@ do dowozu. Funckja TextBoxesAreNotEmpty() zwraca wartość 'true' jeżeli wszyst
 - SummaryPage.xaml.cs
 Podsumowanie złożonego zamówienia, wykaz danych zamawiającego, w kilku labelach oraz możliwość dodania uwag. Przycisk zakończ tworzy nowy plik testowy,
 z naszym zamówieniem, przenosi nas również do pierwszej strony i ustawień początkowych. Obsługę linku uzyskano przez zastosowanie <Hiperlinku> w kodzie xaml
-każda z restauracji dodatkowo przechowuje przypisany do siebie adres. Metoda OnClick 
+każda z restauracji dodatkowo przechowuje przypisany do siebie adres. Metoda OnClick odpowiada za wyświetlenie strony w nowej karcie domyślnej przeglądarki.
+
+- Meal.cs
+Klasa przechowująca informację o zamówieniu, z podziałem na typ jedzenie oraz rodzaj składników. Podział na składniki daje możliwość dalszej operacji
+na konretnych danych. Dodatkowo zawarte są tam 2 metody, jedna uzupełniająca cene "podstawy" posiłku po jego rozmiarze a druga przechowująca całkowity koszt 
+zamówionego dania. 
+
+- OrderForm.cs
+Klasa z danymi o zamawiającym, liście posiłków w zamówieniu oraz całkowitym koszcie złożonego zamówienia. Za wyliczenia całkowitego kosztu odpowiada 
+metoda TotalCost() zliczająca ceny wszystkich obiektów typu meal. Druga istniejąca metoda ma za zadanie złożyć odpowdnie numer zamówienia
+składający się z miasta, nazwy restauracji oraz czasu kiedy zostało zamówione.
+
+- Product.cs
+Prosta klasa przechowująca tylko nazwe, typ oraz cene produktu. Przykładowo Ogórek, Warzywo, 5zł
+
+- Restaurant.cs
+Klasa podobnie prosta jak ta opisana wyżej, obiekty tej klasy zawierają informację o mieście w kótrym znajduje się restauracja, nazwie, czy dostarcza 
+ona swoje zamówienia i liście produktów, które możemy tam dostać. 
+
