@@ -18,3 +18,14 @@ W zależności od stanu w jakim jest checkbox do SelectedTypeOfIngredients dodaw
 - ComponentChooser.xaml.cs
 Strona w której dokonuje się wyboru składników na naszym zamówieniu i rozmiaru. Dodatkowo mamy podgląd na aktualnącenę zamówienia, w razie problemów możemy wrócić do poprzedniej strony i dokonać wyboru innej restauracji. W konstruktorze tworzymy nowy obiekt klasy Meal oraz dodajemy rozmiary posiłków. 
 Naciśnięcie produktu powoduje usunięcie go z listy, a wybór rozmiaru blokuje dalsze możliwości zmiany. Pętla foreach w 73 linii odpowiada za przydzielenie produktu do listy odpowiedniego typu, warzyw do warzyw itp...
+Nie ma mozliwości złożenia zamówienia bez wypełnianiea wszystkich pól i wybrania rozmiaru posiłku. Akcja naciśniecia przycisku "Zamów" powoduje stworzenie 
+nowego formularza zamówienia. Przycik "Cofnij" odpowiada za powrót do wcześniejszej strony, bez potrzeby ponownego przekazywania listy Restauracji. 
+
+- UserDataPage.xaml.cs
+Formularz do uzupełnienia przez zamawiającego, zawierający Imie, Nazwisko, Numer telefonu, adres.. W razie braku dowozu nie można uzupełnić adresu
+do dowozu. Funckja TextBoxesAreNotEmpty() zwraca wartość 'true' jeżeli wszystkie dostepne pola są wypełnione lub 'false' jeżeli, któreś z nich jest puste.
+
+- SummaryPage.xaml.cs
+Podsumowanie złożonego zamówienia, wykaz danych zamawiającego, w kilku labelach oraz możliwość dodania uwag. Przycisk zakończ tworzy nowy plik testowy,
+z naszym zamówieniem, przenosi nas również do pierwszej strony i ustawień początkowych. Obsługę linku uzyskano przez zastosowanie <Hiperlinku> w kodzie xaml
+każda z restauracji dodatkowo przechowuje przypisany do siebie adres. Metoda OnClick 
