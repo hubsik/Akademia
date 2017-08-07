@@ -1,0 +1,20 @@
+- MainWindow.xaml.cs
+Podział wyświetlanego okna na 2 ramki, w każdej wyświetlane niezależne strony. W lewej ramce wywołanie klasy 'CityChooser'.
+
+- CityChooser.xaml.cs
+Celem było otrzymanie okna z możliwością wpisania nazwy miasta w którym szukamy jedzenia. Osiągnięto to przy pomocy TextBoxa (TextBoxCity). Wpisanie ciągu znaków zakończonych enterem powoduje sprawdzenie czy istanieją restauracje o takiej wartości pola "City". 
+Wystąpienie powoduje dodanie elementów do kolejnej listy (ListOfRestaurantsForSelectedCity). 
+Gdy ListOfRestaurantsForSelectedCity jest puste to wywoływany jest komunikat w innym przypadku w ramkach wyświetlane są kolejne strony. Przekazywana jest 
+Załadowanie restauracji następuje przy pomocy StreamReadera, wczytywane jest przy pomocy schematu, linia po linii, z odzieleniem spacjami Produktów.
+
+- RestaurantChooser.xaml.cs
+W tej klasie znajduje się tylko jeden ListBox przeznaczony do wyświetlania wybranych wcześniej restauracji. W konstruktorze funkcji dodawane są elemety do Listboxa z przekazanej Listy. Następnie gdy wybierzemy jedną z dostępnych restauracji następuje przypisanie jej do SelectedRestaurant. 
+Restauracja zostaje przekazana do ComponentChooser, tam dzięki niej będą wypisywane dostępne składniki. 
+
+- IngredientsChooset.xaml.cs 
+Składa się z 5 checkboxów, założeniem jest aby móc filtrować ListBox'a wyświetlanego w RestaurantChooserz'e. 
+W zależności od stanu w jakim jest checkbox do SelectedTypeOfIngredients dodawany jest type posiłku lub odbierany z niego. Przy usuwaniu zostało zastosowane wyrażenie lambda. Funkcja MakeRestaurantChooser() odpowiada za zmodyfikowanie listy w taki sposób, aby znajdowały się w niej tylko typy wybrane w CheckBoxach. 
+
+- ComponentChooser.xaml.cs
+Strona w której dokonuje się wyboru składników na naszym zamówieniu i rozmiaru. Dodatkowo mamy podgląd na aktualnącenę zamówienia, w razie problemów możemy wrócić do poprzedniej strony i dokonać wyboru innej restauracji. W konstruktorze tworzymy nowy obiekt klasy Meal oraz dodajemy rozmiary posiłków. 
+Naciśnięcie produktu powoduje usunięcie go z listy, a wybór rozmiaru blokuje dalsze możliwości zmiany. Pętla foreach w 73 linii odpowiada za przydzielenie produktu do listy odpowiedniego typu, warzyw do warzyw itp...
